@@ -1,0 +1,51 @@
+<html>
+      <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <title>Zahlengenerator</title>
+		
+	  <script>
+			"use strict";
+
+			function fcalc() {
+			
+			let Zahl = document.getElementById("idZahl").value;
+			let i = 1; 
+			let Quadrat;
+			let Quadruple
+			let ausgabe=" ";
+			
+			ausgabe = ausgabe + "<table border=1>";
+			ausgabe = ausgabe + "<tr><th>x</td><th>f(x)=x<sup>2</td><th>f(x)=x<sup>3</td></tr>";
+			
+			while (i <= Zahl) {
+			Quadrat = i * i;
+			Quadruple = i * i * i;
+			if(Quadruple<30){
+			ausgabe = ausgabe + "<tr><td style=background-color:yellow>" + i + "</td><td>" + Quadrat + "</td><td style=background-color:yellow>" + Quadruple + "</td></tr>";
+			}
+			else{
+			ausgabe = ausgabe + "<tr><td>" + i + "</td><td>" + Quadrat + "</td><td>" + Quadruple + "</td></tr>";
+			}
+			i = i + 1 ;}
+				
+			document.getElementById("idAusgabe").innerHTML = ausgabe;
+
+			}
+
+	  </script>
+	  </head>
+
+	  <body>
+		<h1>Zahlengenerator (Quadrierer)</h1>
+		Gib eine Zahl an:<input id="idZahl" type="text" value="10">
+		<button onclick="fcalc();">Berechne!</button>
+		<br> </br>
+		<div id="idAusgabe">Button klicken!</div>
+		<br> </br>
+		<a href="Aufgabe.html"> zu Aufgabe 1 </a>
+		<br> </br>
+		<a href="Aufgabe2.html"> zu Aufgabe 2 </a>
+	
+
+       </body>
+</html>
